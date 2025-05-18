@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+
+  // config hostname "picsum.photos"
+  images: {
+    domains: ['picsum.photos'],
+  },
+
 };
 
 export default nextConfig;
