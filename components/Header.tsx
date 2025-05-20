@@ -1,5 +1,6 @@
 'use client'
-import LogoDark from "next/image";
+import Image from "next/image";
+import Link from 'next/link';
 
 function Header() {
     return (
@@ -62,9 +63,9 @@ function Header() {
                                 </div>
                             </div>
                             <div className="col-xl-4 web-logo">
-                                <a href="/">
-                                    <LogoDark src="/images/logo-dark.png" width={229} height={34} className="img-fluid" alt="Header-logo" />
-                                </a>
+                                <Link href="/">
+                                    <Image src="/images/logo-dark.png" width={229} height={34} className="img-fluid" alt="Header-logo" priority={true}/>
+                                </Link>
                             </div>
                             <div className="col-xl-4 hor-end">
                                 <div className="find-it">
@@ -92,12 +93,15 @@ function Header() {
                         <div className="row ver-center">
                             <div className="col-xl-12">
                                 <ul className="menu-tab dynamic-color">
-                                    <li className="single-list"><a href="/fashion">Fashion</a></li>
-                                    <li className="single-list"><a href="/beauty">Beauty</a></li>
-                                    <li className="single-list"><a href="/lifestyle">Lifestyle</a></li>
-                                    <li className="single-list"><a href="/travel">Travel</a></li>
-                                    <li className="single-list"><a href="/technology">Technology</a></li>
-                                    <li className="single-list"><a href="/entertainment">Entertainment</a></li>
+                                    <li className="single-list">
+                                        <Link href="/about">About Us</Link>
+                                    </li>
+                                    <li className="single-list">
+                                        <Link href="/contact">Contact Us</Link>
+                                    </li>
+                                    <li className="single-list">
+                                        <Link href="/privacy-policy">Privacy Policy</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -112,9 +116,9 @@ function Header() {
                     <div className="row height-64">
                         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                             <div className="web-logo">
-                                <a href="/">
-                                    <LogoDark src="/images/logo-dark.png" width={229} height={34} className="img-fluid" alt="Mobile-logo" priority={true} />
-                                </a>
+                                <Link href="/">
+                                    <Image src="/images/logo-dark.png" width={229} height={34} className="img-fluid" alt="Mobile-logo" priority={true} />
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 hor-end">
@@ -126,12 +130,15 @@ function Header() {
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 show-menu hide-menu">
                             <ul className="menu-tab dynamic-color">
-                                <li className="single-list"><a href="/fashion">Fashion</a></li>
-                                <li className="single-list"><a href="/beauty">Beauty</a></li>
-                                <li className="single-list"><a href="/lifestyle">Lifestyle</a></li>
-                                <li className="single-list"><a href="/travel">Travel</a></li>
-                                <li className="single-list"><a href="/technology">Technology</a></li>
-                                <li className="single-list"><a href="/entertainment">Entertainment</a></li>
+                                <li className="single-list">
+                                    <Link href="/about">About Us</Link>
+                                </li>
+                                <li className="single-list">
+                                    <Link href="/contact">Contact Us</Link>
+                                </li>
+                                <li className="single-list">
+                                    <Link href="/privacy-policy">Privacy Policy</Link>
+                                </li>
                             </ul>
 
                             <div className="mobile-searchbar">
