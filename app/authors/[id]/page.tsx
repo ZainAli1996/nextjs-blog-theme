@@ -1,5 +1,7 @@
 import "../../style.css";
 import Link from "next/link";
+import Image from "next/image";
+import ErrorMessage from "@/components/ErrorMessage";
 
 interface AuthorData {
     id: number;
@@ -46,42 +48,58 @@ async function getPostsByUserId(userId: string): Promise<PostData[]> {
 
 // Author detail page
 async function AuthorDetail({ params }: { params: { id: string } }) {
-    const [authorInfo, authorArticles] = await Promise.all([
-        getUserById(params.id),
-        getPostsByUserId(params.id),
-    ]);
+    try {
+        const [authorInfo, authorArticles] = await Promise.all([
+            getUserById(params.id),
+            getPostsByUserId(params.id),
+        ]);
 
-    return (
-        <div className="dg-container post-container">
-            <div className="row row-gap-40">
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h1 className="mb-0">{authorInfo.name}</h1>
-                    <p><span><b>Email:</b></span> {authorInfo.email}</p>
-                    <p className="mb-0"><span><b>Company:</b></span> {authorInfo.company.name}</p>
-                </div>
+        return (
+            <div className="author-page">
+                <div className="dg-container">
+                    <div className="row row-gap-40">
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h1 className="mb-0">{authorInfo.name}</h1>
+                            <p><span><b>Email:</b></span> {authorInfo.email}</p>
+                            <p className="mb-0"><span><b>Company:</b></span> {authorInfo.company.name}</p>
+                        </div>
 
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h2>Posts by {authorInfo.name}</h2>
-                    <div className="row row-gap-30">
-                        {authorArticles.length > 0 ? (
-                            authorArticles.map(({ id, title, body }) => (
-                                <div key={id} className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div className="author-articles">
-                                        <h3>
-                                            <Link className="hdg-24-dark weight-600 min-56-h two-line mb-0" href={`/posts/${id}`}>{title}</Link>
-                                        </h3>
-                                        <p className="two-line mb-0">{body}</p>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <p>This author has not written any posts yet.</p>
-                        )}
+                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h2>Posts by {authorInfo.name}</h2>
+                            <div className="row row-gap-30">
+                                {authorArticles.length > 0 ? (
+                                    authorArticles.map(({ id, title, body }) => (
+                                        <article key={id} className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                            <div className="author-articles">
+                                                <Link href={`/posts/${id}`}>
+                                                    <Image
+                                                        src={`https://picsum.photos/id/${id}/600/400`}
+                                                        alt={title}
+                                                        width={600}
+                                                        height={400}
+                                                    />
+                                                </Link>
+                                                <h3>
+                                                    <Link href={`/posts/${id}`} className="hdg-26-dark weight-600 min-56-h two-line mb-0">{title}</Link>
+                                                </h3>
+                                                <p className="two-line mb-0">{body}</p>
+                                            </div>
+                                        </article>
+                                    ))
+                                ) : (
+                                    <p>This author has not written any posts yet.</p>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    } catch (error) {
+        console.error(error);
+        return (
+            <ErrorMessage message="Something went wrong while loading the article." />
+        );
+    }
 }
-
 export default AuthorDetail;
