@@ -8,7 +8,7 @@ A modern, **responsive**, and **highly customizable** blog theme built with **Ne
 
 - **Dynamic Blog Pages**: Easily customizable and dynamic blog post pages with clean URLs (`/posts/[id]`).
 - **Multi-Section Homepage**: Flexible homepage layout with multiple engaging content sections (`FirstSection`, `SecondSection`, `ThirdSection`).
-- **Pre-built Static Pages**: Ready-to-use static pages such as About, Authors, and Contact.
+- **Pre-built Static Pages**: Ready-to-use static pages such as About, Authors, Contact, and Privacy Policy.
 - **App Router + TypeScript**: Leverage Next.js App Router for scalable routing, combined with TypeScript for enhanced type safety and maintainable code.
 - **Reusable Components**: Modular and reusable components like `Header` and `Footer`.
 - **Fully Responsive Design**: Optimized for both mobile and desktop devices, ensuring your content looks great on all screen sizes.
@@ -23,30 +23,32 @@ A modern, **responsive**, and **highly customizable** blog theme built with **Ne
 
 ```bash
 app/
-├── layout.tsx              # Main layout for the application
-├── page.tsx                # Homepage
-├── about/page.tsx          # About page
-├── authors/[id]/page.tsx   # Dynamic author page (for individual authors)
-├── contact/page.tsx        # Contact page
-├── posts/[id]/page.tsx     # Individual blog post detail page
-├── not-found.ts            # Custom 404 error page
-├── globals.css             # Global CSS for consistent styling across the app
-├── style.css               # Custom CSS for specific design customizations
-├── fonts/                  # Custom font assets
+├── layout.tsx                  # Main layout for the application
+├── page.tsx                    # Homepage
+├── about/page.tsx              # About page
+├── authors/[id]/page.tsx       # Dynamic author page (for individual authors)
+├── authors/[id]/loading.tsx    # Loading skeleton for dynamic author pages
+├── contact/page.tsx            # Contact page
+├── posts/[id]/page.tsx         # Individual blog post detail page
+├── privacy-policy/page.tsx     # Privacy Policy page
+├── not-found.ts                # Custom 404 error page
+├── globals.css                 # Global CSS for consistent styling across the app
+├── style.css                   # Custom CSS for specific design customizations
+├── fonts/                      # Custom font assets
 │   ├── WorkSans-Regular.ttf
 │   ├── WorkSans-Medium.ttf
 │   ├── WorkSans-SemiBold.ttf
 │   ├── WorkSans-Bold.ttf
-└── favicon.ico             # Favicon for the website
+└── favicon.ico                 # Favicon for the website
 
 components/
-├── Header.tsx              # Header component with navigation
-├── Footer.tsx              # Footer component with site information
-├── FirstSection.tsx        # First section of the homepage
-├── SecondSection.tsx       # Second section of the homepage
-├── ThirdSection.tsx        # Third section of the homepage
+├── Header.tsx                  # Header component with navigation
+├── Footer.tsx                  # Footer component with site information
+├── FirstSection.tsx            # First section of the homepage
+├── SecondSection.tsx           # Second section of the homepage
+├── ThirdSection.tsx            # Third section of the homepage
 
 public/
-├── images/                 # Static image assets
-│   ├── logo-dark.png       # Dark logo version
-│   └── logo-light.png      # Light logo version
+├── images/                     # Static image assets
+│   ├── logo-dark.png           # Dark logo version
+│   └── logo-light.png          # Light logo version
