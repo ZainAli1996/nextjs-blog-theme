@@ -3,6 +3,7 @@
 A modern, **responsive**, and **highly customizable** blog theme built with **Next.js App Router** and **TypeScript**. Perfect for content creators, developers, and businesses looking for an efficient and sleek blogging solution. This theme focuses on **performance**, **scalability**, and **seamless user experience**.
 
 ---
+<img width="1920" height="3833" alt="Image" src="https://github.com/user-attachments/assets/b4175bb8-94c6-4a08-8be3-03f29e14fc18" />
 
 ## 🚀 Features
 
