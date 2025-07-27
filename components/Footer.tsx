@@ -11,7 +11,7 @@ export default function Footer() {
                         <Link href="/">
                             <Image src="/images/logo-light.png" className="img-fluid img-block mb-20" width={229} height={34} alt="Footer-logo" />
                         </Link>
-                        <p className="ft-disclaimer">Third-party trademarks are the property of their respective third-party owners. Presence of a third-party trademark does not mean that NextJS - Blog has any relationship with that third-party or that the third-party endorses NextJS - Blog or its services. When you buy through links on NextJS - Blog we may earn a commission.</p>
+                        <p className="ft-disclaimer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique parturient sociosqu sed, tellus nec, lorem habitasse. Integer nunc risus tincidunt tellus sed vitae. Curabitur commodo neque sapien, non dapibus velit malesuada nec. Praesent sit amet ipsum porta, dapibus elit at, varius lacus. Suspendisse potenti. Fusce nec ligula id libero vulputate consequat. Aenean accumsan nulla vel turpis tristique, vitae pharetra dolor egestas. Vivamus vel magna at neque vulputate euismod, nec fermentum magna.</p>
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-5 col-sm-12 col-xs-12">
                         <p className="hdg-20-dark color-white weight-500 mb-20">Company</p>
